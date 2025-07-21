@@ -6,7 +6,7 @@
 /*   By: nmayela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 19:15:32 by nmayela           #+#    #+#             */
-/*   Updated: 2025/07/15 12:04:27 by nmayela          ###   ########.fr       */
+/*   Updated: 2025/07/17 15:50:05 by nmayela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -25,5 +25,5 @@ int	ft_fibonacci(int index)
 }
 /*int main(void)
 {
-	printf("%d",ft_fibonacci(2));
+	printf("%d",ft_fibonacci(4));
 }*/

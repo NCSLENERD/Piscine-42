@@ -6,7 +6,7 @@
 /*   By: nmayela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:25:45 by nmayela           #+#    #+#             */
-/*   Updated: 2025/07/15 13:25:30 by nmayela          ###   ########.fr       */
+/*   Updated: 2025/07/17 15:58:18 by nmayela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -28,5 +28,5 @@ int	ft_is_prime(int nb)
 }
 /*int main (void)
 {
-	printf("%d",ft_is_prime(20021));
+	printf("%d",ft_is_prime(-5));
 }*/

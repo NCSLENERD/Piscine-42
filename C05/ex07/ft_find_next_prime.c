@@ -6,7 +6,7 @@
 /*   By: nmayela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:59:40 by nmayela           #+#    #+#             */
-/*   Updated: 2025/07/15 13:25:00 by nmayela          ###   ########.fr       */
+/*   Updated: 2025/07/18 11:51:09 by nmayela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -39,5 +39,5 @@ int	ft_find_next_prime(int nb)
 }
 /*int main(void)
 {
-	printf("%d",ft_find_next_prime(992));
+	printf("%d",ft_find_next_prime(214759));
 }*/

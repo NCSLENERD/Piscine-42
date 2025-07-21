@@ -1,27 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_strup.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmayela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 18:42:01 by nmayela           #+#    #+#             */
-/*   Updated: 2025/07/17 15:30:26 by nmayela          ###   ########.fr       */
+/*   Created: 2025/07/16 14:26:50 by nmayela           #+#    #+#             */
+/*   Updated: 2025/07/16 15:05:49 by nmayela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int	ft_recursive_power(int nb, int power)
+int	ft_strlen(char *str)
 {
-	if (power < 0)
-		return (0);
-	if (power == 0)
-	{
-		return (1);
-	}
-	return (nb * ft_recursive_power(nb, power - 1));
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
-/*int	main(void)
+
+char	*ft_strdup(char *src)
 {
-	printf("%d",ft_recursive_power(0,2));
+	char	*copy;
+	int		len;
+	int		i;
+
+	len = ft_strlen(src) + 1;
+	i = 0;
+	copy = (char *)malloc (len * sizeof (char));
+	if (copy == NULL)
+		return (0);
+	while (src[i])
+	{
+		copy[i] = src[i];
+		i++;
+	}
+	return (src);
+}
+/*int main (void)
+{
+	char text[] = "bonjour";
+
+	printf("%s",ft_strdup(text));
+	printf("%s",strdup(text));
 }*/

@@ -6,7 +6,7 @@
 /*   By: nmayela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:05:15 by nmayela           #+#    #+#             */
-/*   Updated: 2025/07/15 12:25:27 by nmayela          ###   ########.fr       */
+/*   Updated: 2025/07/17 15:56:22 by nmayela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -28,5 +28,5 @@ int	ft_sqrt(int nb)
 }
 /*int main(void)
 {
-	printf("%d",ft_sqrt(25));
+	printf("%d",ft_sqrt(81));
 }*/
