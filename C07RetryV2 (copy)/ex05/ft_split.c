@@ -6,7 +6,7 @@
 /*   By: nmayela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 12:00:38 by nmayela           #+#    #+#             */
-/*   Updated: 2025/07/24 15:17:05 by nmayela          ###   ########.fr       */
+/*   Updated: 2025/07/24 15:38:15 by nmayela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -67,9 +67,11 @@ char	**ft_split(char *str, char *charset)
 	count = 0;
 	len = ft_strlen(str);
 	result = malloc((len + 1) * sizeof(char *));
+	while(is_charset(str[i],charset))
+		i++;
 	while (i <= len)
 	{
-		if (is_charset(str[i], charset) || str[i] == '\0')
+		if ((is_charset(str[i], charset) || str[i] == '\0') && count != 0)
 		{
 			result[word++] = ft_splitting(&str[i - count], count);
 			count = 0;
@@ -84,8 +86,8 @@ char	**ft_split(char *str, char *charset)
 }
 int main(void)
   {
-  char charset[] = " ";
-  char str[] = "bonjour a cest moi yo mdr salut my g ";
+  char charset[] = "/";
+  char str[] = "//bonjour/a//cest///moi////yo/mdr/salut/my/g////////";
   char **test;
   int	j;
 
