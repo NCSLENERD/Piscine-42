@@ -6,7 +6,7 @@
 /*   By: nmayela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 12:00:38 by nmayela           #+#    #+#             */
-/*   Updated: 2025/07/22 18:17:59 by nmayela          ###   ########.fr       */
+/*   Updated: 2025/07/24 15:17:05 by nmayela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -47,8 +47,7 @@ char	*ft_splitting(char *str, int count)
 		return (NULL);
 	while (i < count)
 	{
-		res[i] = *str;
-		str++;
+		res[i] = str[i];
 		i++;
 	}
 	res[count] = '\0';
@@ -83,7 +82,7 @@ char	**ft_split(char *str, char *charset)
 	result[word] = NULL;
 	return (result);
 }
-/*int main(void)
+int main(void)
   {
   char charset[] = " ";
   char str[] = "bonjour a cest moi yo mdr salut my g ";
@@ -98,4 +97,4 @@ char	**ft_split(char *str, char *charset)
   j++;
   }
   printf("OK%s\n",test[j]);
-  }*/
+  }
