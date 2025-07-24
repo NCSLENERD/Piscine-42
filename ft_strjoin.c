@@ -6,7 +6,7 @@
 /*   By: nmayela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 17:06:00 by nmayela           #+#    #+#             */
-/*   Updated: 2025/07/24 18:23:26 by nmayela          ###   ########.fr       */
+/*   Updated: 2025/07/24 18:45:10 by nmayela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -45,7 +45,7 @@ int	ft_strlen_total(char **strs, int size, char *sep)
 	return (len_total);
 }
 
-void	ft_strcat(char *dest, char *src, char *sep, int var)
+void	ft_strcat(char *dest, char *src)
 {
 	int	i;
 	int	len;
@@ -61,14 +61,14 @@ void	ft_strcat(char *dest, char *src, char *sep, int var)
 	}
 	len = len + i;
 	i = 0;
-	if (var == 0)
+	/*if (var == 0)
 	{
 		while (sep[i] != '\0')
 		{
 			dest[len + i] = sep[i];
 			i++;
 		}
-	}
+	}*/
 	dest[len + i] = '\0';
 }
 
@@ -91,12 +91,12 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	i = -1;
 	while (++i < size)
 	{
-		if (strs[i] && strs[i + 1] && i < size - 1)
+		if (strs[i])
 		{
-			ft_strcat(result, strs[i], sep, 0);
+			if (i != size && i != 0)
+				ft_strcat(result, sep);
+			ft_strcat(result, strs[i]);
 		}
-		else if (strs[i])
-			ft_strcat(result, strs[i], sep, 1);
 	}
 	return (result);
 }
@@ -107,10 +107,10 @@ int main(void)
 	char *result;
 	char *sep = "/";
 	
-	tab[0] = 0;
+	tab[0] = "test";
 	tab[1] = 0;
 	tab[2] = "test";
-	tab[3] = "test";
+	tab[3] = 0;
 
 	result = NULL;
 	result = ft_strjoin(4,tab,sep);
