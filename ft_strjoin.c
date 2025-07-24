@@ -6,7 +6,7 @@
 /*   By: nmayela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 17:06:00 by nmayela           #+#    #+#             */
-/*   Updated: 2025/07/24 18:50:00 by nmayela          ###   ########.fr       */
+/*   Updated: 2025/07/24 19:08:29 by nmayela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -61,14 +61,6 @@ void	ft_strcat(char *dest, char *src)
 	}
 	len = len + i;
 	i = 0;
-	/*if (var == 0)
-	{
-		while (sep[i] != '\0')
-		{
-			dest[len + i] = sep[i];
-			i++;
-		}
-	}*/
 	dest[len + i] = '\0';
 }
 
@@ -78,16 +70,11 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		len_result;
 	int		i;
 
-	result = NULL;
-	if (size == 0)
-	{
-		result = malloc(1);
-		result[0] = '\0';
-		return (result);
-	}
 	len_result = ft_strlen_total(strs, size, sep);
 	result = malloc((len_result + 1) * sizeof(char));
 	result[0] = '\0';
+	if (size == 0)
+		return (result);
 	i = -1;
 	len_result = 1;
 	while (++i < size)
@@ -109,10 +96,10 @@ int main(void)
 	char *result;
 	char *sep = "/";
 	
-	tab[0] = "test";
-	tab[1] = 0;
-	tab[2] = "test";
-	tab[3] = 0;
+	tab[0] = 0;
+	tab[1] = "test";
+	tab[2] = 0;
+	tab[3] = "test";
 
 	result = NULL;
 	result = ft_strjoin(4,tab,sep);
