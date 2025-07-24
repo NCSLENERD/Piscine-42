@@ -6,7 +6,7 @@
 /*   By: nmayela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 14:29:37 by nmayela           #+#    #+#             */
-/*   Updated: 2025/07/24 20:16:26 by nmayela          ###   ########.fr       */
+/*   Updated: 2025/07/24 20:44:08 by nmayela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "./ft_list.h"
@@ -21,12 +21,10 @@ t_list	*ft_create_element(int data)
 	return (new);
 }
 
-void	append_list(void **begin_list,int data)
+void	append_list(t_list **begin_list,t_list *new)
 {
 	t_list *tmp;
 	
-	t_list *new = malloc(sizeof(t_list));
-
 	if(*begin_list == NULL)
 	{
 		(*begin_list) = new;
@@ -36,22 +34,21 @@ void	append_list(void **begin_list,int data)
 	{	
 		tmp = tmp->next;
 	}
-	new = tmp; 
-	new->data = data;
-	new->next = NULL;
+	tmp->next = new;
 }
 
 int main(void)
 {
 	void *ptr;
 	t_list *test1 ;
-	//t_list *test2;
-	int	data;
-	data = 10;
-	test1 = ft_create_element(data);
+	t_list *test2;
+	/*int	data;
+	data = 10;*/
+	test1 = ft_create_element(10);
+	test2 = ft_create_element(5);
 	ptr = &test1;
-	data = 5;
-	append_list(ptr, data);
+	//data = 5;
+	append_list(ptr,test2);
 	
 	while(test1)
 	{
