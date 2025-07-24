@@ -6,7 +6,7 @@
 /*   By: nmayela <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 17:06:00 by nmayela           #+#    #+#             */
-/*   Updated: 2025/07/24 18:45:10 by nmayela          ###   ########.fr       */
+/*   Updated: 2025/07/24 18:50:00 by nmayela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -89,13 +89,15 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	result = malloc((len_result + 1) * sizeof(char));
 	result[0] = '\0';
 	i = -1;
+	len_result = 1;
 	while (++i < size)
 	{
 		if (strs[i])
 		{
-			if (i != size && i != 0)
+			if (!len_result)
 				ft_strcat(result, sep);
 			ft_strcat(result, strs[i]);
+			len_result = 0;
 		}
 	}
 	return (result);
